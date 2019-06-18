@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Keypay balance extension",
+  "version": "0.1",
+  "description": "Keypay balance extension for calculation days on leave balances",
+  "content_scripts": [
+    {
+      "matches": ["https://keypay.yourpayroll.com.au/Employee/*/Leave"],
+      "js": ["jquery-3.4.1.min.js", "index.js"]
+    }
+  ]
+}
