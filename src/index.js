@@ -1,5 +1,4 @@
 function updateLevelBalance() {
-	console.log("loaded");
 	let levelTable = $("th:contains(Leave Accrued)").parents("table");
 	const annualLeaveTD = $(levelTable).find("td:contains(Annual Leave)").next();
 	const sickLeaveTD = $(levelTable).find("td:contains(sick leave)").next();
@@ -14,10 +13,12 @@ function updateLevelBalance() {
 updateLevelBalance();
 
 const timer = setInterval(checkLeaveTableCreated, 1000);
+let timerCount = 0;
 
 function checkLeaveTableCreated () {
-	if ($("th:contains(Leave Accrued)").parents("table").length > 0) {
-		clearInterval (timer);
+	timerCount++;
+	if ($("th:contains(Leave Accrued)").parents("table").length > 0 || timerCount >= 5) {
+		clearInterval(timer);
 		updateLevelBalance();
 	}
 }
