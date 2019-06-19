@@ -10,9 +10,7 @@ function updateLevelBalance() {
 	sickLeaveTD.text(`${sickLeaveTD.text()} (${sickLeaveDay} days)`);
 }
 
-updateLevelBalance();
-
-const timer = setInterval(checkLeaveTableCreated, 1000);
+const timer = setInterval(checkLeaveTableCreated, 500);
 let timerCount = 0;
 
 function checkLeaveTableCreated () {
